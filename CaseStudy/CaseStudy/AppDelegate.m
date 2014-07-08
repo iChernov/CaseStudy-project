@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Record.h"
+#import "CSInitialDataContainer.h"
+
+#define NULL_TO_NIL(obj) ({ __typeof__ (obj) __obj = (obj); __obj == [NSNull null] ? nil : obj; })
 
 @implementation AppDelegate
 
@@ -17,7 +20,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // here we have to call initial pre-load/updating of the given array of records
+    CSInitialDataContainer *initialRecords = [[CSInitialDataContainer alloc] init];
+    [self fillDatabaseWithItems:initialRecords.initialRecordsArray];
+    NSArray *allRecords = [self getAllCSRecords];
+    NSLog(@"records count: %d", [allRecords count]);
     return YES;
 }
 							
@@ -98,7 +105,7 @@
 {
     // initializing NSFetchRequest
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"CSRecord"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Record"
                                               inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
@@ -113,14 +120,46 @@
     return fetchedRecords;
 }
 
+-(Record *)getCSRecordWithID:(NSNumber *)identifier
+{
+    // initializing NSFetchRequest
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Record"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == %@", identifier];
+     [fetchRequest setPredicate:predicate];
+    
+    NSError* error;
+    
+    if ([self.managedObjectContext countForFetchRequest:fetchRequest error:&error] == 0) {
+        NSLog(@"No object matches given id %@", identifier);
+        return nil;
+    }
+
+    NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    return [fetchedRecords objectAtIndex:0];
+}
+
 - (void)fillDatabaseWithItems: (NSArray *)items
 {
     //each item we get is either product or creator
     for (NSDictionary *item in items) {
-        Record * newRecord = [NSEntityDescription insertNewObjectForEntityForName:@"Record"
-                                                            inManagedObjectContext:self.managedObjectContext];
-        newRecord.id = [item objectForKey:@"id"] ? [item objectForKey:@"id"] : @"";
-        newRecord.text = [item objectForKey:@"text"] ? [item objectForKey:@"text"] : @"";
+        NSNumber *uniqueID = NULL_TO_NIL([item objectForKey:@"id"]);
+        if (!uniqueID) {
+            return;
+        }
+        // if entity with such ID already exists - we will update it...
+        Record *record = [self getCSRecordWithID:uniqueID];
+        if (!record) {
+        //...if not - we create the new one
+            record = [NSEntityDescription insertNewObjectForEntityForName:@"Record"
+                                          inManagedObjectContext:self.managedObjectContext];
+            record.id = uniqueID;
+        }
+        NSString *text = NULL_TO_NIL([item objectForKey:@"text"]);
+        record.text = text ? text : @"";
     }
     NSError *error;
     if (![self.managedObjectContext save:&error]) {

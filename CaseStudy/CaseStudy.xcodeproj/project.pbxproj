@@ -23,7 +23,8 @@
 		76182D39196BEC2B00E2EDE6 /* CaseStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D38196BEC2B00E2EDE6 /* CaseStudyTests.m */; };
 		76182D45196BECAA00E2EDE6 /* CSRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76182D43196BECAA00E2EDE6 /* CSRecord.xcdatamodeld */; };
 		76182D47196BEDC400E2EDE6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76182D46196BEDC400E2EDE6 /* CoreData.framework */; };
-		76182D4A196BF09A00E2EDE6 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D49196BF09A00E2EDE6 /* Record.m */; };
+		76182D4D196BF45D00E2EDE6 /* CSInitialDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D4C196BF45D00E2EDE6 /* CSInitialDataContainer.m */; };
+		76182D50196BF6AF00E2EDE6 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D4F196BF6AF00E2EDE6 /* Record.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,10 @@
 		76182D38196BEC2B00E2EDE6 /* CaseStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseStudyTests.m; sourceTree = "<group>"; };
 		76182D44196BECAA00E2EDE6 /* CSRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CSRecord.xcdatamodel; sourceTree = "<group>"; };
 		76182D46196BEDC400E2EDE6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		76182D48196BF09A00E2EDE6 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Record.h; path = CaseStudy/Resources/Record.h; sourceTree = "<group>"; };
-		76182D49196BF09A00E2EDE6 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Record.m; path = CaseStudy/Resources/Record.m; sourceTree = "<group>"; };
+		76182D4B196BF45D00E2EDE6 /* CSInitialDataContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSInitialDataContainer.h; path = CaseStudy/Resources/CSInitialDataContainer.h; sourceTree = "<group>"; };
+		76182D4C196BF45D00E2EDE6 /* CSInitialDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSInitialDataContainer.m; path = CaseStudy/Resources/CSInitialDataContainer.m; sourceTree = "<group>"; };
+		76182D4E196BF6AF00E2EDE6 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Record.h; path = CaseStudy/Resources/Record.h; sourceTree = "<group>"; };
+		76182D4F196BF6AF00E2EDE6 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Record.m; path = CaseStudy/Resources/Record.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,9 +168,11 @@
 		76182D42196BEC8B00E2EDE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				76182D4E196BF6AF00E2EDE6 /* Record.h */,
+				76182D4F196BF6AF00E2EDE6 /* Record.m */,
 				76182D43196BECAA00E2EDE6 /* CSRecord.xcdatamodeld */,
-				76182D48196BF09A00E2EDE6 /* Record.h */,
-				76182D49196BF09A00E2EDE6 /* Record.m */,
+				76182D4B196BF45D00E2EDE6 /* CSInitialDataContainer.h */,
+				76182D4C196BF45D00E2EDE6 /* CSInitialDataContainer.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -269,10 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76182D4A196BF09A00E2EDE6 /* Record.m in Sources */,
 				76182D24196BEC2B00E2EDE6 /* ViewController.m in Sources */,
+				76182D4D196BF45D00E2EDE6 /* CSInitialDataContainer.m in Sources */,
 				76182D1E196BEC2B00E2EDE6 /* AppDelegate.m in Sources */,
 				76182D45196BECAA00E2EDE6 /* CSRecord.xcdatamodeld in Sources */,
+				76182D50196BF6AF00E2EDE6 /* Record.m in Sources */,
 				76182D1A196BEC2B00E2EDE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

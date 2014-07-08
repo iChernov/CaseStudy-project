@@ -12,7 +12,7 @@
 
 @interface Record : NSManagedObject
 
-@property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * text;
 
 @end
