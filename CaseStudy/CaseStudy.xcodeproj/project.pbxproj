@@ -14,7 +14,6 @@
 		76182D1A196BEC2B00E2EDE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D19196BEC2B00E2EDE6 /* main.m */; };
 		76182D1E196BEC2B00E2EDE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D1D196BEC2B00E2EDE6 /* AppDelegate.m */; };
 		76182D21196BEC2B00E2EDE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76182D1F196BEC2B00E2EDE6 /* Main.storyboard */; };
-		76182D24196BEC2B00E2EDE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D23196BEC2B00E2EDE6 /* ViewController.m */; };
 		76182D26196BEC2B00E2EDE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76182D25196BEC2B00E2EDE6 /* Images.xcassets */; };
 		76182D2D196BEC2B00E2EDE6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76182D2C196BEC2B00E2EDE6 /* XCTest.framework */; };
 		76182D2E196BEC2B00E2EDE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76182D0D196BEC2B00E2EDE6 /* Foundation.framework */; };
@@ -25,6 +24,8 @@
 		76182D47196BEDC400E2EDE6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76182D46196BEDC400E2EDE6 /* CoreData.framework */; };
 		76182D4D196BF45D00E2EDE6 /* CSInitialDataContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D4C196BF45D00E2EDE6 /* CSInitialDataContainer.m */; };
 		76182D50196BF6AF00E2EDE6 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D4F196BF6AF00E2EDE6 /* Record.m */; };
+		76182D53196BFA3B00E2EDE6 /* CSRecordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D52196BFA3B00E2EDE6 /* CSRecordsTableViewController.m */; };
+		76182D56196C05FC00E2EDE6 /* CSRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D55196C05FC00E2EDE6 /* CSRecordTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,6 @@
 		76182D1C196BEC2B00E2EDE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76182D1D196BEC2B00E2EDE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		76182D20196BEC2B00E2EDE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		76182D22196BEC2B00E2EDE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		76182D23196BEC2B00E2EDE6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		76182D25196BEC2B00E2EDE6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		76182D2B196BEC2B00E2EDE6 /* CaseStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaseStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76182D2C196BEC2B00E2EDE6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -63,6 +62,10 @@
 		76182D4C196BF45D00E2EDE6 /* CSInitialDataContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSInitialDataContainer.m; path = CaseStudy/Resources/CSInitialDataContainer.m; sourceTree = "<group>"; };
 		76182D4E196BF6AF00E2EDE6 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Record.h; path = CaseStudy/Resources/Record.h; sourceTree = "<group>"; };
 		76182D4F196BF6AF00E2EDE6 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Record.m; path = CaseStudy/Resources/Record.m; sourceTree = "<group>"; };
+		76182D51196BFA3B00E2EDE6 /* CSRecordsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordsTableViewController.h; sourceTree = "<group>"; };
+		76182D52196BFA3B00E2EDE6 /* CSRecordsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordsTableViewController.m; sourceTree = "<group>"; };
+		76182D54196C05FC00E2EDE6 /* CSRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRecordTableViewCell.h; sourceTree = "<group>"; };
+		76182D55196C05FC00E2EDE6 /* CSRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRecordTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +131,10 @@
 				76182D1C196BEC2B00E2EDE6 /* AppDelegate.h */,
 				76182D1D196BEC2B00E2EDE6 /* AppDelegate.m */,
 				76182D1F196BEC2B00E2EDE6 /* Main.storyboard */,
-				76182D22196BEC2B00E2EDE6 /* ViewController.h */,
-				76182D23196BEC2B00E2EDE6 /* ViewController.m */,
+				76182D51196BFA3B00E2EDE6 /* CSRecordsTableViewController.h */,
+				76182D52196BFA3B00E2EDE6 /* CSRecordsTableViewController.m */,
+				76182D54196C05FC00E2EDE6 /* CSRecordTableViewCell.h */,
+				76182D55196C05FC00E2EDE6 /* CSRecordTableViewCell.m */,
 				76182D25196BEC2B00E2EDE6 /* Images.xcassets */,
 				76182D14196BEC2B00E2EDE6 /* Supporting Files */,
 			);
@@ -274,9 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76182D24196BEC2B00E2EDE6 /* ViewController.m in Sources */,
 				76182D4D196BF45D00E2EDE6 /* CSInitialDataContainer.m in Sources */,
+				76182D56196C05FC00E2EDE6 /* CSRecordTableViewCell.m in Sources */,
 				76182D1E196BEC2B00E2EDE6 /* AppDelegate.m in Sources */,
+				76182D53196BFA3B00E2EDE6 /* CSRecordsTableViewController.m in Sources */,
 				76182D45196BECAA00E2EDE6 /* CSRecord.xcdatamodeld in Sources */,
 				76182D50196BF6AF00E2EDE6 /* Record.m in Sources */,
 				76182D1A196BEC2B00E2EDE6 /* main.m in Sources */,

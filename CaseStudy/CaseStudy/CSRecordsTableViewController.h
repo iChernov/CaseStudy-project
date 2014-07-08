@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CSRecordsTableViewController.h
 //  CaseStudy
 //
 //  Created by Ivan Chernov on 08/07/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CSRecordsTableViewController : UITableViewController
 
 @end

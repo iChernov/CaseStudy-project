@@ -21,13 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // here we have to call initial pre-load/updating of the given array of records
-    CSInitialDataContainer *initialRecords = [[CSInitialDataContainer alloc] init];
-    [self fillDatabaseWithItems:initialRecords.initialRecordsArray];
-    NSArray *allRecords = [self getAllCSRecords];
-    NSLog(@"records count: %d", [allRecords count]);
     return YES;
 }
-							
+
+- (void)preLoadData {
+    CSInitialDataContainer *initialRecords = [[CSInitialDataContainer alloc] init];
+    [self fillDatabaseWithItems:initialRecords.initialRecordsArray];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -114,6 +115,10 @@
     [fetchRequest setPredicate:predicate];
      */
     
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
     NSError* error;
     // getting all records
     NSArray *fetchedRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -165,6 +170,7 @@
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateRoot" object:nil];
 }
 
 @end

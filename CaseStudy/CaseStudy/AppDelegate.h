@@ -20,5 +20,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (NSArray*)getAllCSRecords;
+- (void)preLoadData;
 
 @end
