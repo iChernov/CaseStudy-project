@@ -21,6 +21,9 @@
 		76182D2F196BEC2B00E2EDE6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76182D11196BEC2B00E2EDE6 /* UIKit.framework */; };
 		76182D37196BEC2B00E2EDE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76182D35196BEC2B00E2EDE6 /* InfoPlist.strings */; };
 		76182D39196BEC2B00E2EDE6 /* CaseStudyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D38196BEC2B00E2EDE6 /* CaseStudyTests.m */; };
+		76182D45196BECAA00E2EDE6 /* CSRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76182D43196BECAA00E2EDE6 /* CSRecord.xcdatamodeld */; };
+		76182D47196BEDC400E2EDE6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76182D46196BEDC400E2EDE6 /* CoreData.framework */; };
+		76182D4A196BF09A00E2EDE6 /* Record.m in Sources */ = {isa = PBXBuildFile; fileRef = 76182D49196BF09A00E2EDE6 /* Record.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		76182D34196BEC2B00E2EDE6 /* CaseStudyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CaseStudyTests-Info.plist"; sourceTree = "<group>"; };
 		76182D36196BEC2B00E2EDE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		76182D38196BEC2B00E2EDE6 /* CaseStudyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseStudyTests.m; sourceTree = "<group>"; };
+		76182D44196BECAA00E2EDE6 /* CSRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CSRecord.xcdatamodel; sourceTree = "<group>"; };
+		76182D46196BEDC400E2EDE6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		76182D48196BF09A00E2EDE6 /* Record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Record.h; path = CaseStudy/Resources/Record.h; sourceTree = "<group>"; };
+		76182D49196BF09A00E2EDE6 /* Record.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Record.m; path = CaseStudy/Resources/Record.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76182D47196BEDC400E2EDE6 /* CoreData.framework in Frameworks */,
 				76182D10196BEC2B00E2EDE6 /* CoreGraphics.framework in Frameworks */,
 				76182D12196BEC2B00E2EDE6 /* UIKit.framework in Frameworks */,
 				76182D0E196BEC2B00E2EDE6 /* Foundation.framework in Frameworks */,
@@ -82,6 +90,7 @@
 		76182D01196BEC2B00E2EDE6 = {
 			isa = PBXGroup;
 			children = (
+				76182D42196BEC8B00E2EDE6 /* Resources */,
 				76182D13196BEC2B00E2EDE6 /* CaseStudy */,
 				76182D32196BEC2B00E2EDE6 /* CaseStudyTests */,
 				76182D0C196BEC2B00E2EDE6 /* Frameworks */,
@@ -101,6 +110,7 @@
 		76182D0C196BEC2B00E2EDE6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76182D46196BEDC400E2EDE6 /* CoreData.framework */,
 				76182D0D196BEC2B00E2EDE6 /* Foundation.framework */,
 				76182D0F196BEC2B00E2EDE6 /* CoreGraphics.framework */,
 				76182D11196BEC2B00E2EDE6 /* UIKit.framework */,
@@ -150,6 +160,16 @@
 				76182D35196BEC2B00E2EDE6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76182D42196BEC8B00E2EDE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76182D43196BECAA00E2EDE6 /* CSRecord.xcdatamodeld */,
+				76182D48196BF09A00E2EDE6 /* Record.h */,
+				76182D49196BF09A00E2EDE6 /* Record.m */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76182D4A196BF09A00E2EDE6 /* Record.m in Sources */,
 				76182D24196BEC2B00E2EDE6 /* ViewController.m in Sources */,
 				76182D1E196BEC2B00E2EDE6 /* AppDelegate.m in Sources */,
+				76182D45196BECAA00E2EDE6 /* CSRecord.xcdatamodeld in Sources */,
 				76182D1A196BEC2B00E2EDE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +488,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		76182D43196BECAA00E2EDE6 /* CSRecord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				76182D44196BECAA00E2EDE6 /* CSRecord.xcdatamodel */,
+			);
+			currentVersion = 76182D44196BECAA00E2EDE6 /* CSRecord.xcdatamodel */;
+			path = CSRecord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 76182D02196BEC2B00E2EDE6 /* Project object */;
 }
