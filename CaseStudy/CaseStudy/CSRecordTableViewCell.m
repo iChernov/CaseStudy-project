@@ -22,9 +22,17 @@ NSString *CSRecordCellReuseIdentifier =  @"CSRecordCellReuseIdentifier";
         textView.scrollEnabled = NO;
         textView.editable = NO;
         textView.selectable = YES;
+        textView.font = [UIFont fontWithName:@"Helvetica" size:15.0];
         [self.contentView addSubview:textView];
     }
     return self;
+}
+
+- (void)setText:(NSString *)string {
+    textView.text = string;
+    if (string.length > 35) {
+        textView.scrollEnabled = YES;
+    }
 }
 
 - (void)awakeFromNib

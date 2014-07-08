@@ -90,36 +90,13 @@
         cell = [[CSRecordTableViewCell alloc] init];
     }
     cell.textView.text = nil;
-    cell.textView.text = currentRecord.text;
+    [cell setText: currentRecord.text];
     return cell;
 }
 
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Record *record = [_recordsArray objectAtIndex:indexPath.row];
-    NSString *text = record.text;
-    UILabel *gettingSizeLabel = [[UILabel alloc] init];
-    gettingSizeLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
-    gettingSizeLabel.text = text;
-    gettingSizeLabel.numberOfLines = 0;
-    gettingSizeLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    CGSize maximumLabelSize = CGSizeMake(280, 9999);
-    
-    CGSize expectSize = [gettingSizeLabel sizeThatFits:maximumLabelSize];
-    return expectSize.height + 25;
-}
-
-- (CGFloat)textInset {
-    return 8.0f;
-}
-
-- (CGFloat)textWidthForOuterWidth:(CGFloat)outerWidth {
-    CGFloat textInset = self.textInset * 2;
-    CGFloat marginH = 0;
-    CGFloat width = outerWidth - marginH;
-    CGFloat textWidth = width - textInset;
-    return textWidth;
+    return 44;
 }
 
 /*

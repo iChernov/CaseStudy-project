@@ -15,4 +15,7 @@ extern NSString *CSRecordCellReuseIdentifier;
 }
 
 @property (nonatomic, retain) UITextView *textView;
+
+- (void)setText:(NSString *)string;
+
 @end
